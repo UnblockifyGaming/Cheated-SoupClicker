@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Soup Clicker</title>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+        <script src="/data.js"></script>
+        <link rel="shortcut icon" type="image/png" href="soup-128.png"></link>
+    </head>
+    <body>
+        <div id="backgroundsoups"></div>
+        <div id="soups"></div>
+        <div id="savemenu">soups/second: <h id="sps">0</h><br>soups per second multiplier: <h id="spsmult">1</h>x<br>clicks: <h id="clicks">0</h><br>total soups: <h id="total">0</h><br><br><h onclick="saveGame()" id="save">save game</h><br><br><h onclick="openOptions()">options</h></div>
+        <div id="soup" onclick="clickSoup();" onmousedown="md(112)" onmouseup="md(128)"></div>
+        <div id="counters"></div>
+        <div id="soupbottom"></div>
+        <div id="prestigecover"><h class="yellow">PRESTIGE!</h><br><h class="gray">You unlocked prestige </h><h class="yellow" id="earned">I</h></div>
+        <div id="goldensoup" onclick="collectGoldenSoup()"></div>
+        <div id="goldenfeather" onclick="collectGoldenFeather()"></div>
+        <div id="prestigemenu">prestige to earn <h id="renownearned">0</h> renown<br>renown: <h id="renowndisp">0</h><br>prestiges: <h id="prestiges"></h><br><button onclick="handlePrestige()">Prestige</button></div>
+        <div id="prestige">
+            <div id="starbg"></div>
+            <div id="shadedBorders"></div>
+            <div id="prestigeupgrades"></div>
+            <div id="prestigeboxes"></div>
+            <div id="prestigebox">
+                <h class="white" id="totalrenown" style="display: inline-block; vertical-align: middle; line-height: normal; border: 1px solid white; padding: 5px; background-color: rgb(0,0,0,0.5);"></h>
+                <br><br>
+                <h class="white" onclick="reincarnate();" style="border: 1px solid white; padding: 5px; background-color: rgb(0,0,0,0.5);"> Reincarnate </h>
+            </div>
+        </div>
+        <div id="alerts"><br></div>
+        <div id="textsave"><h onclick="getSave()">get save</h><br><h onclick="loadSave()">load save</h><br><h onclick="deleteSave()">wipe save</h></div>
+        <div id="pebble" onclick="clickPebble()"></div>
+        <div id="goldensouprushbody"></div>
+        <div id="options">
+            <br><h style="font-size: 24px">Options</h>
+            <br><br><h style="font-size: 16px">Sometimes your upgrades menu is broken. Clicking this should fix it.</h><br>
+            <button style="font-size: 16px">Fix Upgrades</button>
+            <br><br><h style="font-size: 16px">Maximum number of background soups</h><br>
+            <input type="text" style="font-size: 24px; border: 1px solid black" value="350" id="mbgs"></input>
+            <br><br><h style="font-size: 16px">Maximum number of background soups created on click</h><br>
+            <input type="text" style="font-size: 24px; border: 1px solid black" value="16" id="mbgsp"></input><br><br><br>
+        <button style="font-size: 16px" onclick="closeOptions()">Done</button><br><br>
+        </div>
+        <div id="eventalert">
+            <h id="eventtype" style="font-size: 64px; color: #cc9600; background-color: rgb(255, 255, 255, 0.75); border-radius: 5px;"></h>
+            <br>
+            <h id="eventtext" style="font-size: 50px; color: #620169; background-color: rgb(255, 255, 255, 0.75); border-radius: 5px;"></h>
+            <br>
+            <br>
+            <h id="eventdesc" style="font-size: 30px; color: #000000; background-color: rgb(255, 255, 255, 0.75); border-radius: 5px;"></h>
+        </div>
+        <div id="eventtime">
+            <h style="font-size: 30px; color: #000000; background-color: rgb(255, 255, 255, 0.75); border-radius: 5px;"></h>
+            <br>
+            <h style="font-size: 30px; color: #000000; background-color: rgb(255, 255, 255, 0.75); border-radius: 5px;"></h>
+            <br>
+            <h style="font-size: 30px; color: #000000; background-color: rgb(255, 255, 255, 0.75); border-radius: 5px;"></h>
+        </div>
+        <div id="eventclick" onclick="eventTrigger('click-event', {})" onmouseover="eventTrigger('event-hover',{hover: true});" onmouseout="eventTrigger('event-hover',{hover: false});"></div>
+        <div id="hopper" onclick="hopperEvent('click')"></div>
+        <div id="hoppertext">
+            <h style="font-size: 24px"></h>
+            <br><button style="font-size: 24px" onclick="hopperEvent('pay')">Pay</button>&nbsp<button style="font-size: 24px" onclick="hopperEvent('fight')">Fight</button>
+        </div>
+        <div id="hopperinfo">
+            <h style="font-size: 24px"></h>
+            <br><button style="font-size: 24px" onclick="hopperEvent('ok')">Ok</button>
+        </div>
+        <div id="hopperhealth"></div>
+        <div id="cooper" onclick="clickCooper()"></div>
+        <div id="store">
+            Store<br>
+            <div id="SoupCollector"   class='storeitem' onclick="buyItem('SoupCollector')">   <b>Soup Collector -         <h id="SoupCollectorPrice">  15</h> <smallsoup></smallsoup></b> <br>Gets one assist for you every 5 seconds.<div id="SoupCollectorAmount"        class="amount">5</div></div>
+            <div id="SoupFarmer"      class='storeitem' onclick="buyItem('SoupFarmer')">      <b>Soup Farmer -            <h id="SoupFarmerPrice">     15</h> <smallsoup></smallsoup></b> <br>Farms one soup per second.              <div id="SoupFarmerAmount"           class="amount">5</div></div>
+            <div id="SoupMiner"       class='storeitem' onclick="buyItem('SoupMiner')">       <b>Soup Miner -             <h id="SoupMinerPrice">      15</h> <smallsoup></smallsoup></b> <br>Mines five soups per second.            <div id="SoupMinerAmount"            class="amount">5</div></div>
+            <div id="SoupFactory"     class='storeitem' onclick="buyItem('SoupFactory')">     <b>Soup Factory -           <h id="SoupFactoryPrice">    15</h> <smallsoup></smallsoup></b> <br>Produces 10 soups per second.           <div id="SoupFactoryAmount"          class="amount">5</div></div>
+            <div id="SoupPebble"      class='storeitem' onclick="buyItem('SoupPebble')">      <b>Pebble III Pants -       <h id="SoupPebblePrice">     15</h> <smallsoup></smallsoup></b> <br>Collects 50 gold ingots (50 soups).     <div id="SoupPebbleAmount"           class="amount">5</div></div>
+            <div id="SoupXV"          class='storeitem' onclick="buyItem('SoupXV')">          <b>Prestige XV Soup User -  <h id="SoupXVPrice">         15</h> <smallsoup></smallsoup></b> <br>Kills an astounding 100 nons per second.<div id="SoupXVAmount"               class="amount">5</div></div>
+            <div id="SoupXXX"         class='storeitem' onclick="buyItem('SoupXXX')">         <b>Prestige XXX Soup User - <h id="SoupXXXPrice">        15</h> <smallsoup></smallsoup></b> <br>Slaughters 1,500 nons per second.       <div id="SoupXXXAmount"              class="amount">5</div></div>
+            <div id="UltimateSoupGod" class='storeitem' onclick="buyItem('UltimateSoupGod')"> <b>Ultimate Soup God -      <h id="UltimateSoupGodPrice">15</h> <smallsoup></smallsoup></b> <br>Kills 25,000 nons (soups) per second.   <div id="UltimateSoupGodAmount"      class="amount">5</div></div>
+        </div>  
+        <div id="upgrades"><h>Upgrades</h>
+            <div id="overheal"      class="upgrade" onclick="buyUpgrade(0);"><b>Overheal      </b><br>x2 soups from clicks                <br>Cost: 100     <smallsoup></smallsoup></div>
+            <div id="2xrewards"     class="upgrade" onclick="buyUpgrade(1);"><b>2x Rewards    </b><br>x2 soups from clicks and SPS        <br>Cost: 2,500   <smallsoup></smallsoup></div>
+            <div id="TastySoup"     class="upgrade" onclick="buyUpgrade(2);"><b>Tasty Soup    </b><br>4x soups from clicks                   <br>Cost: 50,000  <smallsoup></smallsoup></div>
+            <div id="SoupsBuff"     class="upgrade" onclick="buyUpgrade(3);"><b>Soups Buff    </b><br>2x soups from SPS                   <br>Cost: 100,000 <smallsoup></smallsoup></div>
+            <div id="GoldenFeather" class="upgrade" onclick="buyUpgrade(4);"><b>Golden Feather</b><br>Every 1000 clicks, spawns a feather<br>Cost: <br>10.000 million <smallsoup></smallsoup></div>
+            <div id="OverhealBuff"  class="upgrade" onclick="buyUpgrade(5);"><b>Overheal Buff </b><br>x2 soups from clicks and SPS        <br>Cost: <br>50.000 million <smallsoup></smallsoup></div>
+            <div id="AdminBlessing" class="upgrade" onclick="buyUpgrade(6);"><b>Admin Blessing</b><br>2x soups from SPS                   <br>Cost: <br>250.000 million <smallsoup></smallsoup></div>
+            <div id="SoupsBuff2"    class="upgrade" onclick="buyUpgrade(7);"><b>Soups Buff    </b><br>x2 soups from clicks and SPS        <br>Cost: <br>1.000 billion <smallsoup></smallsoup></div>
+            <div id="GoldenFeather2"class="upgrade" onclick="buyUpgrade(8);"><b>Golden Feather II</b><br>Every 750 clicks, spawn a feather<br>Cost: <br>5.000 billion <smallsoup></smallsoup></div>
+            <div id="FinalUpgrade"  class="upgrade" onclick="buyUpgrade(9);"><b>Pit Update</b><br>x4 soups from clicks and SPS         <br>Cost: <br>25.000 billion <smallsoup></smallsoup></div>
+        </div>
+    </body>
+    <script src="/main.js"></script>
+</html>

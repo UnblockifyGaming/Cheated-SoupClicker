@@ -1,0 +1,404 @@
+body {
+background-image: url(soup-128.png);
+
+}
+
+* {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Minecraftia", "Courier New", Times, serif;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #000000;
+    -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+}
+#soup {
+    width: 128px;
+    height: 128px;
+    background-image: url(soup-128.png);
+    position: absolute;
+    left: -64px;
+    top: -64px;
+    cursor: pointer;
+    margin-left: 50%;
+    margin-top: 20%;
+    background-size: contain;
+    background-position: center;
+    z-index: 12000;
+}
+#soups{
+    background: url(soup-32.png) no-repeat:
+    /* background-color:rgba(255,255,255,0.75); */
+    border-radius:18px;
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    margin: 16px;
+    height: 28px;
+    padding: 4px 12px 0px 36px;
+    font-weight:bold;
+    font-size: 24px;
+    z-index: 100;
+}
+#savemenu {
+    background-color:#cccccc;
+    /* background-color:rgba(255,255,255,0.75); */
+    border-radius:18px;
+    position:absolute;
+    left: 0px;
+    top: 45px;
+    margin: 16px;
+    height: 28px;
+    padding: 6px 12px 124px 12px;
+    font-weight:bold;
+    font-size: 12px;
+    z-index: 100;
+    text-align: left;
+    line-height: 1.5;
+}
+#prestigemenu {
+    background-color:#cccccc;
+    /* background-color:rgba(255,255,255,0.75); */
+    border-radius:18px;
+    position: absolute;
+    left: 0px;
+    top: 216px;
+    margin: 16px;
+    /* height: 28px; */
+    padding: 6px 12px 8px 12px;
+    font-weight:bold;
+    font-size: 12px;
+    z-index: 150;
+    text-align: left;
+    line-height: 1.5;
+}
+#upgrades {
+    float: right;
+    border: 1px solid black;
+    padding: 5px;
+    width: 175px;
+    margin-right: 1%;
+    z-index: 110;
+}
+#store {
+    float: right;
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+    width: 500px;
+    margin-right: 0.5%;
+    /* position: absolute; */
+    /* margin-left: ; */
+    z-index: 111;
+}
+.storeitem {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 2.5%;
+    height: 45px;
+    text-align: left;
+    z-index: 112;
+}
+.upgrade {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 2.5%;
+    /* height: 60px; */
+    width: 150px;
+    z-index: 113;
+}
+@font-face {
+    font-family: Minecraftia;
+    src: url("assets/fonts/minecraft.ttf");
+}
+smallsoup {
+    background:url(soup-16.png) no-repeat;
+    width:14px;
+    height:14px;
+    display:inline-block;
+    position:relative;
+    top:0px;
+    left:-8px;
+    margin-right:-8px;
+}
+soup32 {
+    background:url(soup-32.png) no-repeat;
+    width:28px;
+    height:28px;
+    display:inline-block;
+    position:relative;
+    top:0px;
+    left:-16px;
+    margin-right:-16px;
+    z-index: -50;
+}
+div .amount {
+    position:absolute;
+    right:8px;
+    top:22px;
+    font-size:48px;
+    color:#000000;
+    opacity:0.2;
+}
+h {
+    display: inline;
+}
+body {
+    background:url(soup-32-transparent.png);
+    /* background-color: #f0fcff; */
+    
+}
+#soupbottom {
+    background: url(soup-body-36.png);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 150%;
+    height: 1000%;
+    z-index: 50;
+}
+#prestigecover{
+    position: absolute;
+    z-index: -16000;
+    visibility: hidden;
+    text-align: center;
+    /* width: 97%; */
+    /* height: 25%; */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    margin-top: 15%;
+}
+.yellow {
+    color: yellow;
+    font-size: 32px;
+}
+.white {
+    color: white;
+    font-size: 24px;
+    margin-top: 24px;
+}
+.gray {
+    color: gray;
+    font-size: 32px;
+}
+#goldensoup {
+    background:url(golden-soup-64.png) no-repeat;
+    width:56px;
+    height:56px;
+    display:inline-block;
+    position:fixed;
+    top:-32px;
+    left:-32px;
+    margin-right:150px;
+    z-index: 498;
+}
+#goldenfeather {
+    background:url(golden-feather-64.png) no-repeat;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    position:fixed;
+    top:-32px;
+    left:-32px;
+    margin-right:150px;
+    z-index: 500;
+}
+#pebble {
+    background:url(pebble-64.png) no-repeat;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    position: fixed;
+    top:-32px;
+    left:-32px;
+    margin-right:150px;
+    z-index: 499;
+}
+#alerts {
+    background-color:#cccccc;
+    /* background-color:rgba(255,255,255,0.75); */
+    border-radius:18px;
+    position: absolute;
+    left: 0px;
+    top: 378px;
+    margin: 16px;
+    padding: 6px 12px 2px 12px;
+    font-weight:bold;
+    font-size: 12px;
+    z-index: 100;
+    text-align: left;
+    line-height: 1.5;
+    visibility: hidden;
+}
+#textsave {
+    background-color:#cccccc;
+    /* background-color:rgba(255,255,255,0.75); */
+    border-radius:18px;
+    position:absolute;
+    left: 0px;
+    top: 318px;
+    margin: 16px;
+    height: 44px;
+    padding: 6px 12px 16px 12px;
+    font-weight:bold;
+    font-size: 12px;
+    z-index: 100;
+    text-align: left;
+    line-height: 1.5;
+    /* visibility: hidden; */
+}
+goldensouprush {
+    background: url(golden-soup-64.png) no-repeat;
+    width:64px;
+    height:64px;
+    display:inline-block;
+    position: fixed;
+    top:-32px;
+    left:-32px;
+    /* margin-right:150px; */
+    z-index: 49;
+}
+#starbg {
+    background: url(starbg.jpg);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -15000;
+    visibility: hidden;
+}
+#shadedBorders {
+    background: url(shadedBorders.png) no-repeat;
+    background-size:100% 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -15250;
+    visibility: hidden;
+}
+#prestige {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -14750;
+    visibility: hidden;
+}
+#prestigebox {
+    background: url(ascendbox.png) no-repeat;
+    background-size:100% 100%;
+    position: absolute;
+    right: 50%;
+    top: 0%;
+    transform: translate(50%, 0%);
+    width: 344px;
+    height: 163px;
+    z-index: -15250;
+    text-align: center;
+    visibility: hidden;
+}
+#prestigeupgrades {
+    cursor: default;
+}
+#options {
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.2;
+    position: fixed;
+    background-color: white;
+    border: 3px solid black;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
+    visibility: hidden;
+}
+#eventalert{
+    position: fixed;
+    z-index: 16500;
+    text-align: center;
+    width: 50%;
+    height: 25%;
+    margin-left: 25%;
+    margin-top: 1%;
+    color: #cc9600;
+    visibility: hidden;
+}
+#eventtime{
+    position: fixed;
+    z-index: 16000;
+    text-align: center;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, 0%);
+    margin-left: 50%;
+    margin-bottom: 1%;
+    color: #cc9600;
+    visibility: hidden;
+}
+#eventclick{
+    position: fixed;
+    z-index: 16250;
+    width: 72px;
+    height: 72px;
+    left: -36px;
+    top: -36px;
+    background-size: 72px 72px;
+    visibility: hidden;
+}
+#hopper {
+    background:url(bhopper.png) no-repeat;
+    width:161.66px;
+    height:138.66px;
+    background-size: 161.66px 138.66px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    margin-top: 20%;
+    z-index: 10000;
+    visibility: hidden;
+}
+#hopperhealth {
+    background:url(red-bg.png) no-repeat;
+    border: 2px solid black;
+    border-radius: 3px;
+    width:161.66px;
+    height:20px;
+    background-size: 50% 100%;
+    position: fixed;
+    transform: translate(-50%, -400%);
+    margin-left: 50%;
+    margin-top: 20%;
+    z-index: 10000;
+    visibility: hidden;
+}
+#hoppertext, #hopperinfo{
+    background-color: rgb(255, 255, 255, 1);
+    border: 2px solid black;
+    position: fixed;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    margin-top: 30%;
+    z-index: 10000;
+    visibility: hidden;
+}
+#cooper {
+    background:url(cooper.png) no-repeat;
+    width:107px;
+    height:98px;
+    background-size: 107px 98px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    z-index: 91000;
+    visibility: hidden;
+}
