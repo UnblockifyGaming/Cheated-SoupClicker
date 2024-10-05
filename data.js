@@ -14,7 +14,7 @@ let renown = {
 
             name: "Renown Shop",
             description: "The first renown upgrade.",
-            cost: 1,
+            cost: 0,
             bought: false,
             needed: [],
             prestige: 1,
@@ -29,7 +29,7 @@ let renown = {
 
             name: "Tenacity",
             description: "Doubles the number of soups per click that you get.",
-            cost: 10,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 1,
@@ -44,7 +44,7 @@ let renown = {
 
             name: "Extra Hearts",
             description: "You start the game with 10 Soup Collectors.",
-            cost: 10,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 1,
@@ -59,7 +59,7 @@ let renown = {
 
             name: "Mysticism",
             description: "There is a small chance to get 100 seconds of your current soups per second when you click the soup.",
-            cost: 10,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 1,
@@ -73,7 +73,7 @@ let renown = {
 
             name: "Scam Artist",
             description: "Store items cost 5% less.",
-            cost: 15,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 1,
@@ -87,7 +87,7 @@ let renown = {
 
             name: "Yummy",
             description: "Clicking the soup gives you +10% of your normal soups per second.",
-            cost: 30,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 1,
@@ -101,7 +101,7 @@ let renown = {
 
             name: "Overheal",
             description: "Doubles the number of soups you get per second.",
-            cost: 15,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 2,
@@ -115,7 +115,7 @@ let renown = {
 
             name: "Dirty",
             description: "All effects from Golden Soups last 5s longer.",
-            cost: 15,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 2,
@@ -129,7 +129,7 @@ let renown = {
 
             name: "Fishing Club",
             description: "Pebble III Pants give you 2 pants instead of 1 per click.",
-            cost: 15,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 3,
@@ -143,7 +143,7 @@ let renown = {
 
             name: "First Strike",
             description: "The first time you click on the soup each second rewards +100% soup.",
-            cost: 30,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 4,
@@ -157,7 +157,7 @@ let renown = {
 
             name: "Divine Intervention",
             description: "There is a small chance to get twice as much renown when you prestige.",
-            cost: 75,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 5,
@@ -171,7 +171,7 @@ let renown = {
 
             name: "Tasty Soup",
             description: "You get one more renown from Major Events.",
-            cost: 50,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 5,
@@ -185,7 +185,7 @@ let renown = {
 
             name: "Fast Pass",
             description: "You start the game with 1 million soups.",
-            cost: 100,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 8,
@@ -199,7 +199,7 @@ let renown = {
 
             name: "The Way",
             description: "You can now prestige even when you would not earn any renown.<br>(I don't know why you would want this)",
-            cost: 100,
+            cost: 0,
             bought: false,
             needed: ["Renown Shop"],
             prestige: 8,
@@ -213,7 +213,7 @@ let renown = {
 
             name: "Tenacity II",
             description: "Triples the number of soups per click that you get.",
-            cost: 100,
+            cost: 0,
             bought: false,
             needed: ["Tenacity"],
             prestige: 9,
@@ -227,7 +227,7 @@ let renown = {
 
             name: "Extra Hearts II",
             description: "You start the game with 10 more Soup Collectors.",
-            cost: 100,
+            cost: 0,
             bought: false,
             needed: ["Extra Hearts"],
             prestige: 9,
@@ -241,7 +241,7 @@ let renown = {
 
             name: "Scam Artist II",
             description: "Store items cost another 5% less.",
-            cost: 25,
+            cost: 0,
             bought: false,
             needed: ["Scam Artist"],
             prestige: 10,
@@ -294,7 +294,7 @@ let upgrades = [
         bought: false,
         click: 2,
         sps: 1,
-        cost: 100
+        cost: 0
     },
     {
         name: "2xrewards",
@@ -303,7 +303,7 @@ let upgrades = [
         bought: false,
         click: 2,
         sps: 2,
-        cost: 2500,
+        cost: 0,
     },
     {
         name: "TastySoup",
@@ -312,7 +312,7 @@ let upgrades = [
         bought: false,
         click: 4,
         sps: 1,
-        cost: 50000,
+        cost: 0,
     },
     {
         name: "SoupsBuff",
@@ -321,7 +321,7 @@ let upgrades = [
         bought: false,
         click: 1,
         sps: 2,
-        cost: 100000,
+        cost: 0,
     },
     {
         name: "GoldenFeather",
@@ -330,7 +330,7 @@ let upgrades = [
         bought: false,
         click: 1,
         sps: 1,
-        cost: 10000000,
+        cost: 0,
     },
     {
         name: "OverhealBuff",
@@ -339,7 +339,7 @@ let upgrades = [
         bought: false,
         click: 2,
         sps: 2,
-        cost: 50000000,
+        cost: 0,
     },
     {
         name: "AdminBlessing",
@@ -348,7 +348,7 @@ let upgrades = [
         bought: false,
         click: 1,
         sps: 2,
-        cost: 250000000,
+        cost: 0,
     },
     {
         name: "SoupsBuff2",
@@ -357,7 +357,7 @@ let upgrades = [
         bought: false,
         click: 2,
         sps: 2,
-        cost: 1000000000,
+        cost: 0,
     },
     {
         name: "GoldenFeather2",
@@ -366,7 +366,7 @@ let upgrades = [
         bought: false,
         click: 1,
         sps: 1,
-        cost: 5000000000,
+        cost: 0,
     },
     {
         name: "FinalUpgrade",
@@ -375,63 +375,63 @@ let upgrades = [
         bought: false,
         click: 4,
         sps: 4,
-        cost: 25000000000,
+        cost: 0,
     },
 ];
 let items = [
     {
         name: "SoupCollector",
         proper_name: "Soup Collector",
-        cost: BigInt(15),
+        cost: BigInt(0),
         value: 0.2,
         amount: 0,
     },
     {
         name: "SoupFarmer",
         proper_name: "Soup Farmer",
-        cost: BigInt(100),
+        cost: BigInt(0),
         value: 1,
         amount: 0,
     },
     {
         name: "SoupMiner",
         proper_name: "Soup Miner",
-        cost: BigInt(500),
+        cost: BigInt(0),
         value: 5,
         amount: 0,
     },
     {
         name: "SoupFactory",
         proper_name: "Soup Factory",
-        cost: BigInt(2500),
+        cost: BigInt(),
         value: 10,
         amount: 0,
     },
     {
         name: "SoupPebble",
         proper_name: "Pebble III Pants",
-        cost: BigInt(7500),
+        cost: BigInt(0),
         value: 50,
         amount: 0,
     },
     {
         name: "SoupXV",
         proper_name: "Prestige XV Soup User",
-        cost: BigInt(50000),
+        cost: BigInt(0),
         value: 100,
         amount: 0,
     },
     {
         name: "SoupXXX",
         proper_name: "Prestige XXX Soup User",
-        cost: BigInt(1000000),
+        cost: BigInt(0),
         value: 1500,
         amount: 0,
     },
     {
         name: "UltimateSoupGod",
         proper_name: "Ultimate Soup God",
-        cost: BigInt(100000000),
+        cost: BigInt(0),
         value: 25000,
         amount: 0,
     },
